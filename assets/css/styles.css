@@ -190,20 +190,64 @@ tbody tr:hover {
     font-size: 14px;
 }
 
-.modal-content input {
+.modal-content input,
+.modal-content select {
     width: 100%;
-    padding: 10px;
+    height: 42px;
+    padding: 10px 12px;
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ddd;
     font-size: 14px;
-    transition: 0.2s;
+    background: white;
+    box-sizing: border-box;
+    outline: none;
+    font-family: inherit;
 }
 
-.modal-content input:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 2px rgba(52,152,219,0.15);
+/* Estilos para placeholders en modales */
+.modal-content input::placeholder,
+.modal-content select option:first-child {
+    color: #aab0b6;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Para navegadores webkit (Chrome, Safari, Edge) */
+.modal-content input::-webkit-input-placeholder {
+    color: #aab0b6;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Para Firefox */
+.modal-content input::-moz-placeholder {
+    color: #aab0b6;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Para Internet Explorer */
+.modal-content input:-ms-input-placeholder {
+    color: #aab0b6;
+    opacity: 0.7;
+    font-style: italic;
+    background-size: 16px;
+}
+    
+
+/* Reset adicional para navegadores específicos */
+.modal-content select::-ms-expand {
+    display: none;
+}
+
+.modal-content select::-webkit-select {
+    background: transparent;
+}
+
+.modal-content select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 inherit;
 }
 
 .modal-buttons {
@@ -253,4 +297,27 @@ tbody tr:hover {
     .modal-buttons button {
         width: 100%;
     }
+}
+
+/* Sidebar Branding */
+.main-sidebar .brand-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 0.8125rem 0.5rem !important;
+}
+
+.brand-image {
+    height: 33px !important;
+    width: 33px !important;
+    margin-right: 0.5rem !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+}
+
+.brand-text {
+    font-size: 1.25rem !important;
+    color: #fff !important;
+    font-weight: 300 !important;
+    margin-left: 0 !important;
 }

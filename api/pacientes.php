@@ -14,8 +14,6 @@ try {
         case 'GET':
             if ($request === 'obtener') {
                 obtenerPacientes();
-            } else if ($request === 'obtener_uno') {
-                obtenerPaciente();
             } else {
                 obtenerPacientes();
             }
@@ -49,27 +47,6 @@ function obtenerPacientes() {
     $query->execute();
     $pacientes = $query->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode(['success' => true, 'data' => $pacientes]);
-}
-
-// Obtener un paciente específico
-function obtenerPaciente() {
-    global $myPDO;
-    
-    if (!isset($_GET['id'])) {
-        echo json_encode(['error' => 'ID no proporcionado']);
-        return;
-    }
-    
-    $id = intval($_GET['id']);
-    $query = $myPDO->prepare('SELECT * FROM users WHERE code = ?');
-    $query->execute([$id]);
-    $paciente = $query->fetch(PDO::FETCH_ASSOC);
-    
-    if ($paciente) {
-        echo json_encode(['success' => true, 'data' => $paciente]);
-    } else {
-        echo json_encode(['error' => 'Paciente no encontrado']);
-    }
 }
 
 // Agregar paciente
