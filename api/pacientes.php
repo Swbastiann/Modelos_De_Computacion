@@ -43,7 +43,7 @@ try {
 // Obtener todos los pacientes
 function obtenerPacientes() {
     global $myPDO;
-    $query = $myPDO->prepare('SELECT * FROM users ORDER BY code DESC');
+    $query = $myPDO->prepare('SELECT * FROM users ORDER BY code ASC');
     $query->execute();
     $pacientes = $query->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode(['success' => true, 'data' => $pacientes]);

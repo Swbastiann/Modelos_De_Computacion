@@ -193,7 +193,7 @@ function mostrarPacientes() {
     <table id="tablaPacientes">
     <thead>
     <tr>
-    <th>Codigo</th>
+    <th>Código</th>
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Estrato</th>

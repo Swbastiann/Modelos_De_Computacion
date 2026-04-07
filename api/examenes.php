@@ -36,7 +36,7 @@ function obtenerExamenes() {
     global $myPDO;
 
     try {
-        $query = $myPDO->prepare("SELECT * FROM exams");
+        $query = $myPDO->prepare("SELECT * FROM exams ORDER BY idx ASC");
         $query->execute();
 
         $exams = $query->fetchAll(PDO::FETCH_ASSOC);
